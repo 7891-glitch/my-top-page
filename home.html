@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>78官网</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+
+        body {
+            background-color: #000;
+            background-image: 
+                linear-gradient(rgba(212, 175, 55, 0.06) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(212, 175, 55, 0.06) 1px, transparent 1px);
+            background-size: 35px 35px;
+            min-height: 100vh;
+            padding: 50px 20px;
+        }
+
+        .container {
+            max-width: 620px;
+            margin: 0 auto;
+        }
+
+        .main-title {
+            color: #d4af37;
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 35px;
+            text-shadow: 0 0 15px #d4af37, 0 0 30px #d4af3760;
+            letter-spacing: 3px;
+        }
+
+        .notice-box {
+            background-color: #0a0a0a;
+            border: 1px solid #d4af3740;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 35px;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.25);
+        }
+
+        .notice-title {
+            color: #d4af37;
+            font-size: 18px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .notice-text {
+            color: #c2c2c2;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            margin-bottom: 60px;
+        }
+
+        .btn {
+            padding: 16px;
+            border: none;
+            border-radius: 10px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 12px rgba(212, 175, 55, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* 按钮悬停发光效果 */
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .btn:hover::after {
+            left: 150%;
+        }
+
+        .btn1 {
+            background: linear-gradient(90deg, #b8860b, #d4af37);
+        }
+
+        .btn2 {
+            background: linear-gradient(90deg, #d4af37, #b8860b);
+        }
+
+        .btn3 {
+            background: #c29b30;
+        }
+
+        .btn4 {
+            background: #947220;
+        }
+
+        .btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 22px rgba(212, 175, 55, 0.5);
+        }
+
+        .footer-text {
+            color: #d4af37;
+            font-size: 16px;
+            text-align: center;
+            letter-spacing: 2px;
+            text-shadow: 0 0 8px #d4af37;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="main-title">78官网</h1>
+
+        <div class="notice-box">
+            <div class="notice-title">
+                <span>🗡</span> 78官网公告
+            </div>
+            <div class="notice-text">
+                ☆78全项目公告声明☆<br>
+                本系列作品仅供学习研究，使用者的任何行为与应用无关，请在24小时内删除本应用[下载代表同意本协议]<br>
+                若有侵权违法行为，请联系我方删除内容<br>
+                本卡网均为自愿捐赠<br>
+                无root玩家请勿下单，下单默认同意<br>
+                不支持米八下单默认同意<br>
+                有事联系客服 恶意投诉拉黑删卡处理
+            </div>
+        </div>
+
+        <div class="button-group">
+            <button class="btn btn1">💳 免手续费卡网一</button>
+            <button class="btn btn2">💳 免手续费卡网二</button>
+            <button class="btn btn3">👥 加入QQ群</button>
+            <button class="btn btn4">↗ 加入TG频道</button>
+        </div>
+
+        <div class="footer-text">78官网</div>
+    </div>
+
+    <script>
+        // 按钮跳转功能，你可以根据需要修改链接
+        document.querySelector('.btn1').addEventListener('click', function() {
+            window.location.href = "https://918.oioix.cn/links/406ECC83";
+        });
+        document.querySelector('.btn2').addEventListener('click', function() {
+            window.location.href = "https://你的卡网地址2.com";
+        });
+        document.querySelector('.btn3').addEventListener('click', function() {
+            alert("QQ群号：xxxxxx");
+        });
+        document.querySelector('.btn4').addEventListener('click', function() {
+            window.location.href = "https://t.me/你的频道";
+        });
+    </script>
+</body>
+</html>
