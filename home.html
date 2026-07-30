@@ -1,165 +1,128 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>78官网</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Microsoft YaHei", sans-serif;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>78官网</title>
+<style>
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, sans-serif;
+}
 
-        body {
-            background-color: #000;
-            background-image: 
-                linear-gradient(rgba(212, 175, 55, 0.06) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(212, 175, 55, 0.06) 1px, transparent 1px);
-            background-size: 35px 35px;
-            min-height: 100vh;
-            padding: 50px 20px;
-        }
+body{
+  background-color:#000000;
+  /* 网格亮度调高，四周微光效果 */
+  background-image: linear-gradient(rgba(124,68,217,0.12) 1px,transparent 1px),linear-gradient(90deg,rgba(124,68,217,0.12) 1px,transparent 1px);
+  background-size:40px 40px;
+  min-height:100vh;
+  padding:40px 16px;
+}
 
-        .container {
-            max-width: 620px;
-            margin: 0 auto;
-        }
+.wrap{
+  max-width:720px;
+  margin:0 auto;
+}
 
-        .main-title {
-            color: #d4af37;
-            text-align: center;
-            font-size: 32px;
-            margin-bottom: 35px;
-            text-shadow: 0 0 15px #d4af37, 0 0 30px #d4af3760;
-            letter-spacing: 3px;
-        }
+.home-title{
+  text-align:center;
+  font-size:42px;
+  color:#b894f0;
+  font-weight:bold;
+  margin-bottom:30px;
+  letter-spacing:2px;
+  text-shadow: 0 0 14px #7c44d9;
+}
 
-        .notice-box {
-            background-color: #0a0a0a;
-            border: 1px solid #d4af3740;
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 35px;
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.25);
-        }
+.notice-box{
+  background-color:#0c0c12;
+  border-radius:10px;
+  padding:22px 20px;
+  margin-bottom:30px;
+  /* 外围紫色光晕，整体变亮 */
+  box-shadow: 0 0 26px rgba(124, 68, 217, 0.35);
+}
 
-        .notice-title {
-            color: #d4af37;
-            font-size: 18px;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
+.notice-title{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  color:#a878f2;
+  font-size:18px;
+  font-weight:bold;
+  margin-bottom:14px;
+}
+.notice-title::before{
+  content:"🗡️";
+}
 
-        .notice-text {
-            color: #c2c2c2;
-            font-size: 14px;
-            line-height: 1.8;
-        }
+.notice-text{
+  color:#c8b2f0;
+  font-size:14px;
+  line-height:1.7;
+}
 
-        .button-group {
-            display: flex;
-            flex-direction: column;
-            gap: 18px;
-            margin-bottom: 60px;
-        }
+.btn-group{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
 
-        .btn {
-            padding: 16px;
-            border: none;
-            border-radius: 10px;
-            color: #fff;
-            font-size: 16px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 0 12px rgba(212, 175, 55, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
+.menu-btn{
+  width:100%;
+  background:#7c44d9;
+  color:#fff;
+  border:none;
+  border-radius:8px;
+  padding:16px;
+  font-size:16px;
+  cursor:pointer;
+  transition:0.24s;
+  box-shadow: 0 0 16px rgba(124,68,217,0.3);
+}
+.menu-btn:hover{
+  background:#9868ff;
+  box-shadow: 0 0 26px rgba(124,68,217,0.55);
+}
 
-        /* 按钮悬停发光效果 */
-        .btn::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 50%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.6s ease;
-        }
-
-        .btn:hover::after {
-            left: 150%;
-        }
-
-        .btn1 {
-            background: linear-gradient(90deg, #b8860b, #d4af37);
-        }
-
-        .btn2 {
-            background: linear-gradient(90deg, #d4af37, #b8860b);
-        }
-
-        .btn3 {
-            background: #c29b30;
-        }
-
-        .btn4 {
-            background: #947220;
-        }
-
-        .btn:hover {
-            transform: scale(1.02);
-            box-shadow: 0 0 22px rgba(212, 175, 55, 0.5);
-        }
-
-        .footer-text {
-            color: #d4af37;
-            font-size: 16px;
-            text-align: center;
-            letter-spacing: 2px;
-            text-shadow: 0 0 8px #d4af37;
-        }
-    </style>
+.footer-text{
+  text-align:center;
+  margin-top:40px;
+  color:#a878f2;
+  font-size:20px;
+  text-shadow: 0 0 10px #7c44d9;
+}
+</style>
 </head>
 <body>
-    <div class="container">
-        <h1 class="main-title">78官网</h1>
+<div class="wrap">
+  <div class="home-title">78官网</div>
 
-        <div class="notice-box">
-            <div class="notice-title">
-                <span>🗡</span> 78官网公告
-            </div>
-            <div class="notice-text">
-                ☆78全项目公告声明☆<br>
-                本系列作品仅供学习研究，使用者的任何行为与应用无关，请在24小时内删除本应用[下载代表同意本协议]<br>
-                若有侵权违法行为，请联系我方删除内容<br>
-                本卡网均为自愿捐赠<br>
-                无root玩家请勿下单，下单默认同意<br>
-                不支持米八下单默认同意<br>
-                卡网打不开请关闭科学上网<br>
-                加入频道打不开请开科学上网<br>
-                有事联系客服 恶意投诉拉黑删卡处理
-            </div>
-        </div>
-
-        <div class="button-group">
-            <button class="btn btn1">💳 免手续费卡网一</button>
-            <button class="btn btn2">👥 加入QQ群</button>
-            <button class="btn btn3">✈️加入TG频道</button>
-        </div>
-
-        <div class="footer-text">78官网</div>
+  <div class="notice-box">
+    <div class="notice-title">78官网公告</div>
+    <div class="notice-text">
+☆78全项目公告声明☆<br>
+本系列作品仅供学习研究，使用者的任何行为与应用无关，请在24小时内删除本应用[下载代表同意本协议]<br>
+若有侵权违法行为，请联系我方删除内容<br>
+本卡网均为自愿捐赠<br>
+无root玩家请勿下单，下单默认同意<br>
+不支持米八下单默认同意<br>
+卡网打不开请关闭科学上网<br>
+加入频道打不开请开科学上网<br>
+有事联系客服 恶意投诉拉黑删卡处理
     </div>
+  </div>
 
-    <script>
-        // 按钮跳转功能，你可以根据需要修改链接
-        document.querySelector('.btn1').addEventListener('click', function() {
-            window.location.href = "https://fakajs.cn/shop/78NB";
-        });
-        document.querySelector('.btn2').addEventListener('click', function() {
-           window.location.href = "https://qun.qq.com/universal-share/share?ac=1&authKey=mVaqo5EPO9kGyeebbMOBB5f7sj
+  <div class="btn-group">
+    <!-- 把引号内换成你的网址 -->
+    <button class="menu-btn" onclick="window.open('https://fakajs.cn/shop/78NB','_self')">💳 免手续费卡网一</button>
+    <button class="menu-btn" onclick="window.open('https://qun.qq.com/universal-share/share?ac=1&authKey=eUChr3H0ny1UjaQ%2F9OZJItJ2kMrt8%2Br63wLug0ziep7nm8LxFoo4siKeR8IUUzBM&busi_data=eyJncm91cENvZGUiOiIxMDEyNjkzNjkxIiwidG9rZW4iOiJmbk1NbGxGeFJrcURxRE1aK2NJWk1Qa1E3dzArc1MwL3RJY0lMQ3hKNFh6RzEyZEZUZVNvVkhqUDU2c1BCWUNuIiwidWluIjoiMzgzMjU5NTA1NCJ9&data=Kt23N6PxxFyx6xP2gJHgpzmtxa1qirzibabxrf3lOgd23RGlm66UWZ5CCyxnKsCEUZA9BAac3IeOd7LNq6bOxA&svctype=4&tempid=h5_group_info','_self')">👥 加入QQ群</button>
+    <button class="menu-btn" onclick="window.open('https://t.me/qiba007','_self')">✈️ 加入TG频道</button>
+  </div>
+
+  <div class="footer-text">78官网</div>
+</div>
+</body>
+</html>
