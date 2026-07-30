@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>78的官网</title>
+<title>演示弹窗页面</title>
 <style>
 *{
   margin: 0;
@@ -119,8 +119,9 @@ button{
   </div>
 
   <div class="btn-wrap">
-    <button class="btn-confirm">同意并进入</button>
-    <button class="btn-cancel">拒绝并退出</button>
+    <!-- 修改完成：点击跳转到 home.html -->
+    <button class="btn-confirm" onclick="location.href='home.html'">同意并进入</button>
+    <button class="btn-cancel" onclick="history.back()">拒绝并退出</button>
   </div>
 </div>
 </body>
