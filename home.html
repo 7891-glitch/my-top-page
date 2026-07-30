@@ -1,106 +1,172 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>演示弹窗页面</title>
-<style>
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: system-ui, -apple-system, sans-serif;
-}
-body{
-  background-color:#000000;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  min-height:100vh;
-  padding:20px;
-}
-.modal-box{
-  width: min(100%, 720px);
-  max-height: 88vh;
-  overflow-y: auto;
-  background-color: #121217;
-  border: 1px solid #7c44d9;
-  border-radius: 12px;
-  padding: 32px 28px;
-  box-shadow: 0 0 52px rgba(124, 68, 217, 0.42);
-}
-.title{
-  text-align:center;
-  font-size:20px;
-  color:#b894f0;
-  font-weight:bold;
-  margin-bottom:24px;
-  letter-spacing:1px;
-}
-.sub-title{
-  color:#a878f2;
-  font-weight:600;
-  margin:18px 0 12px;
-  font-size:16px;
-  border-left:3px solid #7c44d9;
-  padding-left:10px;
-}
-.text-content{
-  color:#c8b2f0;
-  font-size:13px;
-  line-height:1.7;
-}
-.text-content p{
-  margin-bottom:10px;
-}
-.btn-wrap{
-  display:flex;
-  gap:16px;
-  margin-top:36px;
-  justify-content:center;
-}
-button{
-  width:160px;
-  height:44px;
-  border-radius:6px;
-  border:none;
-  font-size:14px;
-  cursor:pointer;
-  transition: all 0.25s ease;
-}
-.btn-confirm{
-  background-color:#7c44d9;
-  color:#ffffff;
-  font-weight: 500;
-}
-.btn-confirm:hover{
-  background-color:#9868ff;
-  box-shadow: 0 0 36px rgba(124, 68, 217, 0.68);
-}
-.btn-cancel{
-  background-color:#1a1a22;
-  color:#a878f2;
-  border:1px solid #7c44d9;
-}
-.btn-cancel:hover{
-  box-shadow: 0 0 22px rgba(124, 68, 217, 0.34);
-}
-.modal-box::-webkit-scrollbar{
-  width:4px;
-}
-.modal-box::-webkit-scrollbar-thumb{
-  background:#7c44d9;
-  border-radius:3px;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>78官网</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+
+        body {
+            background-color: #000;
+            background-image: 
+                linear-gradient(rgba(212, 175, 55, 0.06) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(212, 175, 55, 0.06) 1px, transparent 1px);
+            background-size: 35px 35px;
+            min-height: 100vh;
+            padding: 50px 20px;
+        }
+
+        .container {
+            max-width: 620px;
+            margin: 0 auto;
+        }
+
+        .main-title {
+            color: #d4af37;
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 35px;
+            text-shadow: 0 0 15px #d4af37, 0 0 30px #d4af3760;
+            letter-spacing: 3px;
+        }
+
+        .notice-box {
+            background-color: #0a0a0a;
+            border: 1px solid #d4af3740;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 35px;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.25);
+        }
+
+        .notice-title {
+            color: #d4af37;
+            font-size: 18px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .notice-text {
+            color: #c2c2c2;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            margin-bottom: 60px;
+        }
+
+        .btn {
+            padding: 16px;
+            border: none;
+            border-radius: 10px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 12px rgba(212, 175, 55, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* 按钮悬停发光效果 */
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .btn:hover::after {
+            left: 150%;
+        }
+
+        .btn1 {
+            background: linear-gradient(90deg, #b8860b, #d4af37);
+        }
+
+        .btn2 {
+            background: linear-gradient(90deg, #d4af37, #b8860b);
+        }
+
+        .btn3 {
+            background: #c29b30;
+        }
+
+        .btn4 {
+            background: #947220;
+        }
+
+        .btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 22px rgba(212, 175, 55, 0.5);
+        }
+
+        .footer-text {
+            color: #d4af37;
+            font-size: 16px;
+            text-align: center;
+            letter-spacing: 2px;
+            text-shadow: 0 0 8px #d4af37;
+        }
+    </style>
 </head>
 <body>
-<div class="modal-box">
-  <div class="title">78科技平台 - 免责声明</div>
+    <div class="container">
+        <h1 class="main-title">78官网</h1>
 
-  <div class="sub-title">一、核心条款</div>
-  <div class="text-content">
-    <p>1.本软件所有代码来源于ChatGPT，仅为技术验证及海外用户共同训练使用，严禁用于任何商业用途（包括但不限于付费推广、盈利性服务、二次开发后售卖等），违规使用产生的法律责任及经济损失由使用者自行承担。</p>
+        <div class="notice-box">
+            <div class="notice-title">
+                <span>🗡</span> 78官网公告
+            </div>
+            <div class="notice-text">
+                ☆78全项目公告声明☆<br>
+                本系列作品仅供学习研究，使用者的任何行为与应用无关，请在24小时内删除本应用[下载代表同意本协议]<br>
+                若有侵权违法行为，请联系我方删除内容<br>
+                本卡网均为自愿捐赠<br>
+                无root玩家请勿下单，下单默认同意<br>
+                不支持米八下单默认同意<br>
+                卡网打不开请关闭科学上网<br>
+                加入频道打不开请开科学上网<br>
+                有事联系客服 恶意投诉拉黑删卡处理
+            </div>
+        </div>
+
+        <div class="button-group">
+            <button class="btn btn1">💳 免手续费卡网一</button>
+            <button class="btn btn2">👥 加入QQ群</button>
+            <button class="btn btn3">✈️加入TG频道</button>
+        </div>
+
+        <div class="footer-text">78官网</div>
+    </div>
+
+    <script>
+        // 按钮跳转功能，你可以根据需要修改链接
+        document.querySelector('.btn1').addEventListener('click', function() {
+            window.location.href = "https://fakajs.cn/shop/78NB";
+        });
+        document.querySelector('.btn2').addEventListener('click', function() {
+           window.location.href = "https://qun.qq.com/universal-share/share?ac=1&authKey=mVaqo5EPO9kGyeebbMOBB5f7sjgUgV3v7MmcfrWh%2BJGym%2BZoBFCE52jnTUpS2mX1&busi_data=eyJncm91cENvZGUiOiI5MDEwMTU0NjMiLCJ0b2tlbiI6IjVPYzM5endTckQ5M0xXenZ3L2ptaXpnVGNRbDJYUGxNTHZGbURnakZsdGVKT0hLRnB6RFR3K1pMZExMV3Vla2giLCJ1aW4iOiIzODMyNTk1MDU0In0%3D&data=8b2G2HtBJLoJ1Xvu-QBMZCEd6hoEdfAX_5xmtxiymmPNAOJ4mWG5UXFRTYsITTLem9I5oMRJZjDL0P354qotaQ&svctype=4&tempid=h5_group_info";
+        });
+        document.querySelector('.btn3').addEventListener('click', function() {
+            window.location.href = "https://t.me/qiba007";
+        }    <p>1.本软件所有代码来源于ChatGPT，仅为技术验证及海外用户共同训练使用，严禁用于任何商业用途（包括但不限于付费推广、盈利性服务、二次开发后售卖等），违规使用产生的法律责任及经济损失由使用者自行承担。</p>
     <p>2.本模型仅限海外用户参与共同训练，参与训练前需确保自身符合所在地区的法律法规，禁止任何境内用户以任何形式（包括但不限于跨境代理、他人代注册等）参与训练或使用，违规参与导致的一切后果由使用者负责。</p>
     <p>3.模型训练及使用仅为“可控制、防泛滥”的技术验证目的，使用者不得对模型进行反向工程、拆解、篡改代码或衍生新模型，一经发现，需承担由此造成的技术风险及法律责任。</p>
     <p>4.请勿将本软件及模型传播至国内任何平台（包括但不限于社交软件、视频平台、论坛、网盘等），也不得通过私下分享、链接转发等方式扩散给境内人员，传播行为产生的合规风险及连带责任由传播者自行承担。</p>
