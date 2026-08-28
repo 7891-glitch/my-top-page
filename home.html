@@ -1,129 +1,295 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>78官网</title>
-<style>
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: system-ui, -apple-system, sans-serif;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>78官网</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, sans-serif;
+        }
+        body{
+            position: relative;
+            background-color: #000000; /* 页面整体纯黑色背景 */
+            color:#fff;
+            padding:18px 12px;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        #particles-canvas{
+            position: fixed;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            z-index: -1;
+        }
 
-body{
-  background-color:#000000;
-  /* 网格亮度调高，四周微光效果 */
-  background-image: linear-gradient(rgba(124,68,217,0.12) 1px,transparent 1px),linear-gradient(90deg,rgba(124,68,217,0.12) 1px,transparent 1px);
-  background-size:40px 40px;
-  min-height:100vh;
-  padding:40px 16px;
-}
+        .main-wrap{
+            background:rgba(0,0,0,0.22);
+            border:1px solid #ffc93c;
+            border-radius:24px;
+            padding:18px 16px;
+        }
 
-.wrap{
-  max-width:720px;
-  margin:0 auto;
-}
+        .header-row{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            margin-bottom:22px;
+        }
+        .logo-tag{
+            border:1px solid #ffc838;
+            color:#ffc838;
+            padding:6px 14px;
+            border-radius:30px;
+            font-size:17px;
+            background:rgba(0,0,0,0.35);
+        }
+        .online-status{
+            display:flex;
+            align-items:center;
+            gap:6px;
+            font-size:17px;
+        }
+        .green-dot{
+            width:12px;
+            height:12px;
+            background:#3cd950;
+            border-radius:50%;
+        }
+        h1{
+            text-align:center;
+            font-size:48px;
+            color:#ffcd3c;
+            font-weight:bold;
+            line-height:1.1;
+            margin-bottom:10px;
+        }
+        .sub-title{
+            text-align:center;
+            font-size:20px;
+            color:#bbbbbb;
+            margin-bottom:24px;
+        }
+        .btn-grid{
+            display:grid;
+            grid-template-columns: 1fr 1fr;
+            gap:14px;
+            margin-bottom:20px;
+        }
+        .btn-grid a{
+            text-decoration:none;
+            color:#ffffff;
+        }
+        .card-item{
+            background:rgba(0,0,0,0.30);
+            border:1px solid #ffc93c;
+            border-radius:18px;
+            padding:22px 12px;
+            text-align:center;
+        }
+        .icon{
+            font-size:36px;
+            color:#ffc93c;
+            margin-bottom:10px;
+        }
+        .card-title{
+            font-size:22px;
+            font-weight:bold;
+            margin-bottom:6px;
+        }
+        .card-desc{
+            font-size:16px;
+            color:#999999;
+        }
 
-.home-title{
-  text-align:center;
-  font-size:42px;
-  color:#b894f0;
-  font-weight:bold;
-  margin-bottom:30px;
-  letter-spacing:2px;
-  text-shadow: 0 0 14px #7c44d9;
-}
+        /*公告框：半透黑+金色边框，黑金主题*/
+        .notice-box{
+            background:rgba(0, 0, 0, 0.52);
+            border:1px solid #ffc93c;
+            border-radius:22px;
+            padding:24px 22px;
+            margin-bottom:20px;
+        }
+        .notice-header{
+            display:flex;
+            align-items:center;
+            gap:10px;
+            margin-bottom:18px;
+        }
+        .notice-icon{
+            color:#ffc93c;
+            font-size:24px;
+        }
+        .notice-text{
+            flex:1;
+            font-size:20px;
+            color:#ffc93c;
+        }
+        .tag-top{
+            background:rgba(255,201,60,0.15);
+            color:#ffc93c;
+            padding:4px 10px;
+            border-radius:6px;
+            font-size:15px;
+        }
+        .notice-body p{
+            font-size:16px;
+            line-height:1.8;
+            margin-bottom:12px;
+            color:#ffffff;
+        }
+        .highlight{
+            color:#ffcd3c;
+        }
+        .warn-red{
+            color:#ff6464;
+        }
 
-.notice-box{
-  background-color:#0c0c12;
-  border-radius:10px;
-  padding:22px 20px;
-  margin-bottom:30px;
-  /* 外围紫色光晕，整体变亮 */
-  box-shadow: 0 0 26px rgba(124, 68, 217, 0.35);
-}
-
-.notice-title{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  color:#a878f2;
-  font-size:18px;
-  font-weight:bold;
-  margin-bottom:14px;
-}
-.notice-title::before{
-  content:"🗡️";
-}
-
-.notice-text{
-  color:#c8b2f0;
-  font-size:14px;
-  line-height:1.7;
-}
-
-.btn-group{
-  display:flex;
-  flex-direction:column;
-  gap:14px;
-}
-
-.menu-btn{
-  width:100%;
-  background:#7c44d9;
-  color:#fff;
-  border:none;
-  border-radius:8px;
-  padding:16px;
-  font-size:16px;
-  cursor:pointer;
-  transition:0.24s;
-  box-shadow: 0 0 16px rgba(124,68,217,0.3);
-}
-.menu-btn:hover{
-  background:#9868ff;
-  box-shadow: 0 0 26px rgba(124,68,217,0.55);
-}
-
-.footer-text{
-  text-align:center;
-  margin-top:40px;
-  color:#a878f2;
-  font-size:20px;
-  text-shadow: 0 0 10px #7c44d9;
-}
-</style>
+        .copyright{
+            text-align:center;
+            color:#999999;
+            font-size:15px;
+            line-height:1.8;
+        }
+        .copyright-bottom{
+            font-size:16px;
+            color:#bbbbbb;
+            margin-top:4px;
+        }
+    </style>
 </head>
 <body>
-<div class="wrap">
-  <div class="home-title">78官网</div>
+    <canvas id="particles-canvas"></canvas>
 
-  <div class="notice-box">
-    <div class="notice-title">78官网公告</div>
-    <div class="notice-text">
-☆78全项目公告声明☆<br>
-本系列作品仅供学习研究，使用者的任何行为与应用无关，请在24小时内删除本应用[下载代表同意本协议]<br>
-若有侵权违法行为，请联系我方删除内容<br>
-本卡网均为自愿捐赠<br>
-无root玩家请勿下单，下单默认同意<br>
-不支持米八下单默认同意<br>
-卡网打不开请关闭科学上网<br>
-加入频道打不开请开科学上网<br>
-有事联系客服 恶意投诉拉黑删卡处理
+    <div class="main-wrap">
+        <div class="header-row">
+            <div class="logo-tag">💎 78网络</div>
+            <div class="online-status">
+                <span class="green-dot"></span>
+                <span>系统在线</span>
+            </div>
+        </div>
+
+        <h1>宝贝官<br>网</h1>
+        <div class="sub-title">💎 极致 · 纯粹 · 未来 💎</div>
+
+        <div class="btn-grid">
+            <a href="https://shop.368fk.cn/shop/78NB" target="_blank">
+                <div class="card-item">
+                    <div class="icon">🚀</div>
+                    <div class="card-title">立即前往卡网题卡</div>
+                    <div class="card-desc">卡网 · 题卡</div>
+                </div>
+            </a>
+            <a href="https://qun.qq.com/universal-share/share?ac=1&authKey=fvz9s09%2F%2B7wSJZ1THCrrWj%2FJZoUWeFOS5IwCLWf8q3Scl8geROHpzg27EHmprElA&busi_data=eyJncm91cENvZGUiOiIxMDEyNjkzNjkxIiwidG9rZW4iOiJ0V2h5YWZRV1kvV0M0UER2UTk0ekpCUGdQM2ZlQmsySnlQL2trWjNibjlMSkZjRUEwbjRlZkpHbTl2SUZvdjJ2IiwidWluIjoiMzgzMjU5NTA1NCJ9&data=Cxjjf32ArVmey23jy3LDjT8PjIynnG60b5HYQTKgWRzHOxKjIrZRi_8q3tkE70Wt66z-HtaT-kyzLpZzd-BESA&svctype=4&tempid=h5_group_info" target="_blank">
+                <div class="card-item">
+                    <div class="icon">💬</div>
+                    <div class="card-title">立即加入官方Q群</div>
+                    <div class="card-desc">QQ 群组</div>
+                </div>
+            </a>
+            <a href="替换成你的第三个链接" target="_blank">
+                <div class="card-item">
+                    <div class="icon">📡</div>
+                    <div class="card-title">加入官方TG频道</div>
+                    <div class="card-desc">Telegram</div>
+                </div>
+            </a>
+        </div>
+
+        <div class="notice-box">
+            <div class="notice-header">
+                <span class="notice-icon">🔔</span>
+                <span class="notice-text">78全项目公告声明 ★</span>
+                <span class="tag-top">置顶</span>
+            </div>
+            <div class="notice-body">
+                <p>本系列作品仅供学习研究，使用者的任何行为与应用无关，请在24小时内删除本应用 <span class="highlight">[下载代表同意本协议]</span></p>
+                <p>若有侵权违法行为，请联系我方删除内容</p>
+                <p><span class="highlight">本卡网均为自愿捐赠</span></p>
+                <p class="warn-red">无root玩家请勿下单，下单默认同意</p>
+                <p class="warn-red">不支持米八 下单默认同意</p>
+                <p>有事联系客服 恶意投诉拉黑删卡处理</p>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p>© 2026 78 · 本页面仅供引导 v78.13.91</p>
+            <p class="copyright-bottom">◆ 科技 · 纯粹 ◆</p>
+        </div>
     </div>
-  </div>
 
-  <div class="btn-group">
-    <!-- 把引号内换成你的网址 -->
-    <button class="menu-btn" onclick="window.open('https://shop.368fk.cn/shop/78NB','_self')">💳 免手续费卡网一(优先)</button>
-    <button class="menu-btn" onclick="window.open('https://816.jytos.cn/shop/78NB','_self')">💳 有手续备用卡网二</button>
-    <button class="menu-btn" onclick="window.open('https://qun.qq.com/universal-share/share?ac=1&authKey=eUChr3H0ny1UjaQ%2F9OZJItJ2kMrt8%2Br63wLug0ziep7nm8LxFoo4siKeR8IUUzBM&busi_data=eyJncm91cENvZGUiOiIxMDEyNjkzNjkxIiwidG9rZW4iOiJmbk1NbGxGeFJrcURxRE1aK2NJWk1Qa1E3dzArc1MwL3RJY0lMQ3hKNFh6RzEyZEZUZVNvVkhqUDU2c1BCWUNuIiwidWluIjoiMzgzMjU5NTA1NCJ9&data=Kt23N6PxxFyx6xP2gJHgpzmtxa1qirzibabxrf3lOgd23RGlm66UWZ5CCyxnKsCEUZA9BAac3IeOd7LNq6bOxA&svctype=4&tempid=h5_group_info','_self')">👥 加入QQ群</button>
-    <button class="menu-btn" onclick="window.open('https://t.me/qiba007','_self')">✈️ 加入TG频道</button>
-  </div>
+<script>
+const canvas = document.getElementById('particles-canvas');
+const ctx = canvas.getContext('2d');
+let particles = [];
 
-  <div class="footer-text">78官网</div>
-</div>
+function resizeCanvas(){
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+resizeCanvas();
+window.addEventListener('resize',resizeCanvas);
+
+class Particle{
+    constructor(){
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.radius = Math.random()*2 + 1;
+        this.speedX = (Math.random()-0.5)*0.5;
+        this.speedY = (Math.random()-0.5)*0.5;
+    }
+    update(){
+        this.x += this.speedX;
+        this.y += this.speedY;
+        if(this.x<0||this.x>canvas.width) this.speedX *= -1;
+        if(this.y<0||this.y>canvas.height) this.speedY *= -1;
+    }
+    draw(){
+        ctx.beginPath();
+        ctx.arc(this.x,this.y,this.radius,0,Math.PI*2);
+        ctx.fillStyle="#ffc93c"; //粒子纯金色
+        ctx.fill();
+    }
+}
+
+for(let i=0;i < 110;i++){
+    particles.push(new Particle());
+}
+
+function drawLine(){
+    for(let a=0;a<particles.length;a++){
+        for(let b=a+1;b<particles.length;b++){
+            let dx = particles[a].x - particles[b].x;
+            let dy = particles[a].y - particles[b].y;
+            let dist = Math.sqrt(dx*dx + dy*dy);
+            if(dist < 150){
+                ctx.beginPath();
+                ctx.moveTo(particles[a].x,particles[a].y);
+                ctx.lineTo(particles[b].x,particles[b].y);
+                ctx.strokeStyle=`rgba(255,201,60,${1-dist/150})`; //连线金色
+                ctx.lineWidth=0.7;
+                ctx.stroke();
+            }
+        }
+    }
+}
+
+function animate(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    particles.forEach(p=>{
+        p.update();
+        p.draw();
+    })
+    drawLine();
+    requestAnimationFrame(animate);
+}
+animate();
+</script>
 </body>
 </html>
