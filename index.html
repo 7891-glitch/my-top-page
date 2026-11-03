@@ -38,8 +38,6 @@
             backdrop-filter: blur(12px);
             border: 1px solid rgba(212,175,55,0.32);
         }
-
-        /* 小地球旋转动画 */
         .rotate-earth {
             display: inline-block;
             animation: spin-earth 3s linear infinite;
@@ -55,7 +53,6 @@
     <div class="relative z-10 min-h-screen p-5 flex flex-col items-center justify-center">
         <!-- 第一大块：顶部 + 全部按钮 -->
         <div class="card-bg rounded-3xl w-full max-w-md p-6 mb-4">
-            <!-- 顶部状态栏 -->
             <div class="flex justify-between items-center text-amber-400 text-sm mb-6">
                 <div class="flex items-center gap-2">
                     <span>◆</span>
@@ -67,36 +64,34 @@
                 </div>
             </div>
 
-            <!-- 主标题 -->
             <h1 class="text-[clamp(2.5rem,8vw,4rem)] font-bold text-amber-400 text-center mb-3">七八官网</h1>
             <p class="text-amber-300/70 text-center tracking-widest mb-8">◆ 极 致 · 纯 粹 · 未 来 ◆</p>
 
-            <!-- 按钮区域 -->
             <div class="flex flex-col gap-4">
-                <!-- ✅ 主卡网按钮：填入主卡网址 -->
-                <a href="https://ys.oopb.cn/shop/78NB" class="gold-glow card-bg rounded-2xl p-[14px] flex flex-col items-center justify-center cursor-pointer">
+                <!-- 主卡网（target="_blank"新窗口打开） -->
+                <a href="" target="_blank" class="gold-glow card-bg rounded-2xl p-[14px] flex flex-col items-center justify-center cursor-pointer">
                     <div class="text-4xl mb-2 rotate-earth">🌏</div>
                     <div class="text-white font-bold text-xl text-center">主卡网</div>
                     <div class="text-amber-300/70 mt-1">(点我提卡)</div>
                 </a>
 
                 <div class="grid grid-cols-2 gap-4">
-                    <!-- ✅ 副卡网，填入副卡网址 -->
-                    <a href="78.czvip.cn" class="gold-glow card-bg rounded-2xl p-[14px] flex flex-col items-center justify-center cursor-pointer">
+                    <!-- 副卡网 -->
+                    <a href="" target="_blank" class="gold-glow card-bg rounded-2xl p-[14px] flex flex-col items-center justify-center cursor-pointer">
                         <div class="text-4xl mb-2">📄</div>
                         <div class="text-white font-bold text-xl text-center">副卡网</div>
                         <div class="text-amber-300/70 mt-1">卡网 · 题卡</div>
                     </a>
-                    <!-- ✅ Q群链接 -->
-                    <a href="https://qun.qq.com/universal-share/share?ac=1&authKey=FqwJ68FhEuP1%2BJnxdiRJ2X4jux5gpTvQdNoz4Ps4Vl7WJytJ1ZYXvYbIAJFODpiu&busi_data=eyJncm91cENvZGUiOiI3MTQ4MDc4OTUiLCJ0b2tlbiI6Ijh3U3hFbjBsVmplaXgxZUozc1hnejJYRmlLekZQQmVPL2p2eG5aK25iMkV3Y0xiUUJZQkNZYjg1Skc2cFcwMDMiLCJ1aW4iOiIzODUwMjI1MzEyIn0%3D&data=WGsetYaLtjE1zzZFWF2jd2vH9nXDQ_uRQiZZ7XqtMN2oiMcxhq3mQvYEMNQ-A4-OHvea69n8zqtx44_Mlh_V7g&svctype=4&tempid=h5_group_info" class="gold-glow card-bg rounded-2xl p-[14px] flex flex-col items-center justify-center cursor-pointer">
+                    <!-- Q群 -->
+                    <a href="" target="_blank" class="gold-glow card-bg rounded-2xl p-[14px] flex flex-col items-center justify-center cursor-pointer">
                         <div class="text-4xl mb-2">💬</div>
                         <div class="text-white font-bold text-xl text-center">立即加入官方Q群</div>
                         <div class="text-amber-300/70 mt-1">QQ 群组</div>
                     </a>
                 </div>
 
-                <!-- ✅ TG频道链接 -->
-                <a href="https://t.me/qiba007" class="gold-glow card-bg rounded-2xl p-[14px] flex flex-col items-center justify-center cursor-pointer">
+                <!-- TG频道 -->
+                <a href="" target="_blank" class="gold-glow card-bg rounded-2xl p-[14px] flex flex-col items-center justify-center cursor-pointer">
                     <div class="text-4xl mb-2">📡</div>
                     <div class="text-white font-bold text-xl text-center">加入官方TG频道</div>
                     <div class="text-amber-300/70 mt-1">Telegram</div>
@@ -104,7 +99,7 @@
             </div>
         </div>
 
-        <!-- 第二块：独立公告声明卡片 -->
+        <!-- 公告声明卡片 -->
         <div class="card-bg rounded-3xl w-full max-w-md p-6">
             <div class="flex items-center justify-between gap-2 mb-4">
                 <div class="flex items-center gap-2">
@@ -142,23 +137,22 @@
         </div>
     </div>
 
-    <!-- 高级粒子连线背景 -->
+    <!-- 优化后的粒子（无连线，40个粒子，流畅很多） -->
     <script>
         const canvas = document.getElementById('particles');
         const ctx = canvas.getContext('2d');
         let w = canvas.width = window.innerWidth;
         let h = canvas.height = window.innerHeight;
         const particles = [];
-        const particleCount = 100;
-        const linkDistance = 130;
+        const particleCount = 40;
 
         class Particle {
             constructor(){
                 this.x = Math.random() * w;
                 this.y = Math.random() * h;
                 this.size = Math.random() * 1.8 + 0.4;
-                this.speedX = (Math.random() - 0.5) * 0.35;
-                this.speedY = (Math.random() - 0.5) * 0.35;
+                this.speedX = (Math.random() - 0.5) * 0.2;
+                this.speedY = (Math.random() - 0.5) * 0.2;
                 this.color = 'rgba(212,175,55,' + (Math.random() * 0.45 + 0.25) + ')';
             }
             update(){
@@ -170,7 +164,7 @@
             draw(){
                 ctx.beginPath();
                 ctx.fillStyle = this.color;
-                ctx.shadowBlur = 8;
+                ctx.shadowBlur = 6;
                 ctx.shadowColor = 'rgba(212,175,55,0.45)';
                 ctx.arc(this.x,this.y,this.size,0,Math.PI*2);
                 ctx.fill();
@@ -181,31 +175,12 @@
         function init(){
             for(let i = 0; i < particleCount; i++) particles.push(new Particle());
         }
-        function connectParticles(){
-            for(let i = 0; i < particles.length; i++){
-                for(let j = i + 1; j < particles.length; j++){
-                    const dx = particles[i].x - particles[j].x;
-                    const dy = particles[i].y - particles[j].y;
-                    const distance = Math.sqrt(dx*dx + dy*dy);
-                    if(distance < linkDistance){
-                        const opacity = (1 - distance / linkDistance) * 0.35;
-                        ctx.beginPath();
-                        ctx.strokeStyle = 'rgba(212,175,55,' + opacity + ')';
-                        ctx.lineWidth = 0.6;
-                        ctx.shadowBlur = 6;
-                        ctx.shadowColor = 'rgba(212,175,55,0.35)';
-                        ctx.moveTo(particles[i].x, particles[i].y);
-                        ctx.lineTo(particles[j].x, particles[j].y);
-                        ctx.stroke();
-                        ctx.shadowBlur = 0;
-                    }
-                }
-            }
-        }
         function animate(){
             ctx.clearRect(0,0,w,h);
-            particles.forEach(p=>{p.update();p.draw();})
-            connectParticles();
+            particles.forEach(p=>{
+                p.update();
+                p.draw();
+            })
             requestAnimationFrame(animate);
         }
         init();
