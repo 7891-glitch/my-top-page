@@ -15,9 +15,9 @@
   body {
     min-height: 100vh;
     background:
-      radial-gradient(circle at 20% 10%, rgba(56, 189, 248, 0.18), transparent 28%),
-      radial-gradient(circle at 80% 20%, rgba(129, 140, 248, 0.18), transparent 30%),
-      radial-gradient(circle at 50% 90%, rgba(99, 102, 241, 0.22), transparent 36%),
+      radial-gradient(circle at 20% 10%, rgba(45, 212, 191, 0.16), transparent 28%),
+      radial-gradient(circle at 80% 20%, rgba(167, 139, 250, 0.16), transparent 30%),
+      radial-gradient(circle at 50% 90%, rgba(139, 92, 246, 0.2), transparent 36%),
       linear-gradient(180deg, #05070d 0%, #070b18 48%, #081024 100%);
     color: #e6f1ff;
     position: relative;
@@ -55,8 +55,8 @@
     padding: 1px;
     background: linear-gradient(140deg,
       rgba(148, 163, 184, 0.38),
-      rgba(125, 211, 252, 0.22),
-      rgba(129, 140, 248, 0.14),
+      rgba(45, 212, 191, 0.2),
+      rgba(167, 139, 250, 0.14),
       transparent 45%);
     -webkit-mask: linear-gradient(#000 0 0) content-box,
                  linear-gradient(#000 0 0);
@@ -90,14 +90,14 @@
   }
 
   .mini-tag.right {
-    color: #a5b4fc;
+    color: #c4b5fd;
   }
 
   .mini-tag .dot-icon {
     font-size: 12px;
     line-height: 1;
-    color: #38bdf8;
-    filter: drop-shadow(0 0 7px rgba(56, 189, 248, 0.75));
+    color: #2dd4bf;
+    filter: drop-shadow(0 0 7px rgba(45, 212, 191, 0.75));
   }
 
   .mini-tag.right::before {
@@ -116,7 +116,7 @@
     background: linear-gradient(90deg,
       transparent,
       rgba(148, 163, 184, 0.4),
-      rgba(125, 211, 252, 0.22),
+      rgba(45, 212, 191, 0.2),
       transparent);
     margin-bottom: 12px;
   }
@@ -127,7 +127,7 @@
     padding: 0 18px 40px;
   }
 
-  /* 标题区：加强流光与发光 */
+  /* 标题区：流光 */
   .title-wrap {
     text-align: center;
     margin-bottom: 16px;
@@ -138,19 +138,19 @@
     font-weight: 800;
     letter-spacing: 8px;
     background: linear-gradient(90deg,
-      #38bdf8 0%,
-      #e0f2fe 20%,
-      #7dd3fc 35%,
-      #818cf8 50%,
-      #e0f2fe 65%,
-      #38bdf8 80%,
-      #818cf8 100%);
+      #2dd4bf 0%,
+      #ccfbf1 20%,
+      #5eead4 35%,
+      #a78bfa 50%,
+      #ede9fe 65%,
+      #2dd4bf 80%,
+      #a78bfa 100%);
     background-size: 220% auto;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     animation: shine 3s linear infinite;
-    filter: drop-shadow(0 0 16px rgba(125, 211, 252, 0.65));
+    filter: drop-shadow(0 0 16px rgba(45, 212, 191, 0.65));
     margin-bottom: 10px;
   }
 
@@ -160,7 +160,7 @@
     }
   }
 
-  /* 呼吸灯：加强亮度、尺寸变化和蓝紫脉冲 */
+  /* 呼吸灯带 */
   .breathing-bar {
     position: relative;
     height: 4px;
@@ -170,9 +170,9 @@
     border-radius: 999px;
     background: linear-gradient(90deg,
       transparent,
-      rgba(56, 189, 248, 0.85),
-      rgba(125, 211, 252, 0.95),
-      rgba(129, 140, 248, 0.85),
+      rgba(45, 212, 191, 0.85),
+      rgba(94, 234, 212, 0.95),
+      rgba(167, 139, 250, 0.85),
       transparent);
     filter: blur(0.8px);
     animation: breathe 2s ease-in-out infinite;
@@ -183,30 +183,30 @@
       transform: scaleX(0.45);
       opacity: 0.5;
       box-shadow:
-        0 0 10px rgba(56, 189, 248, 0.55),
-        0 0 24px rgba(125, 211, 252, 0.35),
-        0 0 40px rgba(129, 140, 248, 0.25);
+        0 0 10px rgba(45, 212, 191, 0.55),
+        0 0 24px rgba(45, 212, 191, 0.35),
+        0 0 40px rgba(167, 139, 250, 0.25);
     }
     50% {
       transform: scaleX(1);
       opacity: 1;
       box-shadow:
-        0 0 18px rgba(56, 189, 248, 0.95),
-        0 0 36px rgba(125, 211, 252, 0.75),
-        0 0 60px rgba(129, 140, 248, 0.55);
+        0 0 18px rgba(45, 212, 191, 0.95),
+        0 0 36px rgba(45, 212, 191, 0.75),
+        0 0 60px rgba(167, 139, 250, 0.55);
     }
   }
 
   .sub-title {
     font-size: 12px;
     letter-spacing: 7px;
-    color: #a5b4fc;
-    text-shadow: 0 0 10px rgba(129, 140, 248, 0.55);
+    color: #c4b5fd;
+    text-shadow: 0 0 10px rgba(167, 139, 250, 0.55);
   }
 
   .sub-title span {
     margin: 0 8px;
-    color: #c7d2fe;
+    color: #ddd6fe;
   }
 
   /* 三张按钮卡片 */
@@ -240,7 +240,7 @@
     transform: translateY(-4px);
     box-shadow:
       0 14px 30px rgba(15, 23, 42, 0.7),
-      0 0 0 1px rgba(125, 211, 252, 0.45),
+      0 0 0 1px rgba(45, 212, 191, 0.45),
       inset 0 1px 0 rgba(255, 255, 255, 0.08);
   }
 
@@ -252,7 +252,7 @@
     padding: 1px;
     background: linear-gradient(140deg,
       rgba(148, 163, 184, 0.35),
-      rgba(125, 211, 252, 0.18),
+      rgba(45, 212, 191, 0.18),
       transparent 40%);
     -webkit-mask: linear-gradient(#000 0 0) content-box,
                  linear-gradient(#000 0 0);
@@ -264,15 +264,15 @@
   .card .icon {
     font-size: 30px;
     margin-bottom: 7px;
-    filter: drop-shadow(0 0 12px rgba(125, 211, 252, 0.75));
+    filter: drop-shadow(0 0 12px rgba(45, 212, 191, 0.75));
   }
 
   .card .name {
     font-size: 15px;
     font-weight: 700;
-    color: #e0f2fe;
+    color: #f0fdfa;
     margin-bottom: 3px;
-    text-shadow: 0 0 10px rgba(125, 211, 252, 0.55);
+    text-shadow: 0 0 10px rgba(45, 212, 191, 0.55);
   }
 
   .card .desc {
@@ -285,7 +285,64 @@
     grid-column: 1 / -1;
   }
 
-  /* 公告区：加强蓝紫脉冲变色 */
+  /* 原地稳定 3D 旋转 */
+  .rocket-card {
+    perspective: 1000px;
+  }
+
+  .rocket-stage {
+    display: inline-block;
+    transform-style: preserve-3d;
+    animation: rocketStatic3D 4s linear infinite;
+  }
+
+  .rocket-icon {
+    display: inline-block;
+    font-size: 34px;
+    transform: translateZ(18px);
+    filter: drop-shadow(0 0 12px rgba(167, 139, 250, 0.65));
+  }
+
+  .rocket-ring {
+    position: absolute;
+    left: 50%;
+    top: 42%;
+    width: 80px;
+    height: 80px;
+    margin-left: -40px;
+    margin-top: -40px;
+    border: 1px dashed rgba(167, 139, 250, 0.45);
+    border-radius: 50%;
+    transform: rotateX(70deg) translateZ(8px);
+    animation: ringSpin 4s linear infinite;
+    pointer-events: none;
+  }
+
+  .rocket-ring.inner {
+    width: 54px;
+    height: 54px;
+    margin-left: -27px;
+    margin-top: -27px;
+    border-color: rgba(167, 139, 250, 0.5);
+    animation-duration: 2s;
+  }
+
+  /* 原地自转，不再左右晃 */
+  @keyframes rocketStatic3D {
+    0% {
+      transform: rotateY(0deg);
+    }
+    100% {
+      transform: rotateY(360deg);
+    }
+  }
+
+  @keyframes ringSpin {
+    from { transform: rotateX(70deg) rotateZ(0deg); }
+    to { transform: rotateX(70deg) rotateZ(360deg); }
+  }
+
+  /* 公告区脉冲变色 */
   .notice-box {
     background: linear-gradient(160deg,
       rgba(14, 24, 52, 0.48) 0%,
@@ -301,17 +358,17 @@
   @keyframes noticeColor {
     0%, 100% {
       box-shadow:
-        0 0 22px rgba(56, 189, 248, 0.22),
-        0 0 40px rgba(56, 189, 248, 0.12),
-        inset 0 0 22px rgba(56, 189, 248, 0.08);
-      border-color: rgba(125, 211, 252, 0.28);
+        0 0 22px rgba(45, 212, 191, 0.22),
+        0 0 40px rgba(45, 212, 191, 0.12),
+        inset 0 0 22px rgba(45, 212, 191, 0.08);
+      border-color: rgba(45, 212, 191, 0.28);
     }
     50% {
       box-shadow:
-        0 0 32px rgba(129, 140, 248, 0.38),
-        0 0 60px rgba(129, 140, 248, 0.22),
-        inset 0 0 32px rgba(129, 140, 248, 0.16);
-      border-color: rgba(129, 140, 248, 0.45);
+        0 0 32px rgba(167, 139, 250, 0.38),
+        0 0 60px rgba(167, 139, 250, 0.22),
+        inset 0 0 32px rgba(167, 139, 250, 0.16);
+      border-color: rgba(167, 139, 250, 0.45);
     }
   }
 
@@ -325,7 +382,7 @@
     background: linear-gradient(90deg,
       transparent,
       rgba(148, 163, 184, 0.38),
-      rgba(125, 211, 252, 0.22),
+      rgba(45, 212, 191, 0.22),
       transparent);
   }
 
@@ -343,7 +400,7 @@
     gap: 8px;
     font-size: 14px;
     font-weight: 700;
-    color: #7dd3fc;
+    color: #5eead4;
     letter-spacing: 2px;
     flex: 1;
   }
@@ -454,10 +511,14 @@
     </div>
 
     <div class="grid-box">
-      <!-- 卡片1 -->
+      <!-- 卡片1：主卡网 原地稳定3D旋转 -->
       <a href="https://ys.melognb.cn/shop/78NB" class="card-link">
-        <div class="card">
-          <div class="icon">🚀</div>
+        <div class="card rocket-card">
+          <div class="rocket-stage">
+            <span class="rocket-icon">🚀</span>
+          </div>
+          <div class="rocket-ring"></div>
+          <div class="rocket-ring inner"></div>
           <div class="name">主卡网</div>
           <div class="desc">卡网</div>
         </div>
@@ -529,16 +590,16 @@
 
   function createParticles() {
     particles = [];
-    const count = Math.min(180, Math.floor((w * h) / 11000));
+    const count = Math.min(650, Math.floor((w * h) / 4200));
     for (let i = 0; i < count; i++) {
       particles.push({
         x: Math.random() * w,
         y: Math.random() * h,
-        r: Math.random() * 1.2 + 0.3,
+        r: Math.random() * 1.4 + 0.4,
         vx: (Math.random() - 0.5) * 0.22,
         vy: (Math.random() - 0.5) * 0.22,
-        alpha: Math.random() * 0.4 + 0.12,
-        color: Math.random() > 0.5 ? "125, 211, 252" : "129, 140, 248"
+        alpha: Math.random() * 0.55 + 0.15,
+        color: Math.random() > 0.5 ? "45, 212, 191" : "167, 139, 250"
       });
     }
   }
@@ -556,8 +617,8 @@
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
       ctx.fillStyle = `rgba(${p.color}, ${p.alpha})`;
-      ctx.shadowBlur = 6;
-      ctx.shadowColor = `rgba(${p.color}, 0.6)`;
+      ctx.shadowBlur = 7;
+      ctx.shadowColor = `rgba(${p.color}, 0.7)`;
       ctx.fill();
 
       for (let j = i + 1; j < particles.length; j++) {
@@ -565,12 +626,12 @@
         const dx = p.x - p2.x;
         const dy = p.y - p2.y;
         const dist = Math.hypot(dx, dy);
-        if (dist < 90) {
+        if (dist < 110) {
           ctx.beginPath();
           ctx.moveTo(p.x, p.y);
           ctx.lineTo(p2.x, p2.y);
-          ctx.strokeStyle = `rgba(125, 211, 252, ${0.14 * (1 - dist / 90)})`;
-          ctx.lineWidth = 0.5;
+          ctx.strokeStyle = `rgba(45, 212, 191, ${0.18 * (1 - dist / 110)})`;
+          ctx.lineWidth = 0.6;
           ctx.shadowBlur = 0;
           ctx.stroke();
         }
